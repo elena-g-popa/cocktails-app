@@ -12,47 +12,30 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+  import { mapGetters } from 'vuex';
 
-export default {
-  computed: {
-    ...mapGetters(['getSelectedCocktail']),
-    cocktail() {
-      return this.getSelectedCocktail;
-    },
-    ingredients() {
-      const ingredients = [];
-      for (let i = 1; i <= 15; i++) {
-        const ingredient = this.cocktail[`strIngredient${i}`];
-        const measure = this.cocktail[`strMeasure${i}`];
-        if (ingredient && measure) {
-          ingredients.push(`${ingredient} - ${measure}`);
-        } else if (ingredient) {
-          ingredients.push(ingredient);
+  export default {
+    computed: {
+      // Import the Vuex getter to retrieve the selected cocktail
+      ...mapGetters(['getSelectedCocktail']),
+      // Get the selected cocktail from the Vuex store
+      cocktail() {
+        return this.getSelectedCocktail; 
+      },
+
+      ingredients() {
+        const ingredients = [];
+        for (let i = 1; i <= 15; i++) {
+          const ingredient = this.cocktail[`strIngredient${i}`]; // Get the ingredient value from the cocktail object
+          const measure = this.cocktail[`strMeasure${i}`]; // Get the measurement value from the cocktail object
+          if (ingredient && measure) {
+            ingredients.push(`${ingredient} - ${measure}`); // Combine the ingredient and measurement and add to the ingredients array
+          } else if (ingredient) {
+            ingredients.push(ingredient); // Add the ingredient to the ingredients array
+          }
         }
-      }
-      return ingredients;
+        return ingredients; // Return the array of ingredients
+      },
     },
-  },
-};
+  };
 </script>
-
-<style scoped>
-h1 {
-  margin-top: 30px;
-}
-
-.cocktail-recipe img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
-
-h2 {
-  margin-top: 20px;
-}
-
-ul {
-  margin-left: 20px;
-}
-</style>

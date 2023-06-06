@@ -1,40 +1,32 @@
 <template>
-    <div class="cocktail-item" @click="goToCocktailRecipe">
-      <img :src="cocktail.strDrinkThumb" :alt="cocktail.strDrink" />
-      <h2>{{ cocktail.strDrink }}</h2>
-    </div>
-  </template>
+  <div class="cocktail-item" @click="goToCocktailRecipe">
+    <img :src="cocktail.strDrinkThumb" :alt="cocktail.strDrink" />
+    <h3>{{ cocktail.strDrink }}</h3>
+    <p>{{ cocktail.strCategory }}</p>
+  </div>
+</template>
   
-  <script>
-  import { mapActions } from 'vuex';
-  
+<script>
+  import { mapActions } from "vuex";
+
   export default {
-    props: ['cocktail'],
+    props: ["cocktail"],
+
     methods: {
-      ...mapActions(['fetchCocktailById']),
+      // Import the Vuex action to fetch cocktail details by ID
+      ...mapActions(["fetchCocktailById"]), 
+
       goToCocktailRecipe() {
-        this.fetchCocktailById(this.cocktail.idDrink);
-        this.$router.push({ name: 'CocktailRecipe', params: { id: this.cocktail.idDrink } });
+        // Fetch the cocktail details by invoking the Vuex action with the cocktail ID
+        this.fetchCocktailById(this.cocktail.idDrink); 
+        // Navigate to the "CocktailRecipe" route with the cocktail ID as a parameter
+        this.$router.push({
+          name: "CocktailRecipe",
+          params: { id: this.cocktail.idDrink }, 
+        });
       },
     },
   };
-  </script>
-  
-  <style scoped>
-  .cocktail-item {
-    width: 200px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
-  .cocktail-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .cocktail-item h2 {
-    margin-top: 10px;
-  }
-  </style>
+</script>
+
   

@@ -46,12 +46,12 @@ const store = createStore({
         console.log(error);
       }
     },
-    // Fetch 12 random cocktails
+    // Fetch 6 random cocktails 
     async fetchRandomCocktails({ commit }) {
       try {
         const cocktails = [];
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 0; i < 6; i++) {
           const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php');
           const cocktail = response.data.drinks[0];
           cocktails.push(cocktail);

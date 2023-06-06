@@ -1,0 +1,397 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    padding: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'DM Serif Display', serif;
+}
+
+h1 {
+    text-align: left;
+    color: #333333;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    text-align: right;
+    padding: 20px 0 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #393646;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6rem;
+}
+
+.container {
+    padding: 40px;
+    text-align: left;
+    background-color: #f5f5f5;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.image-container {
+    background-image: url(/img/bar.5d1370b0.jpg);
+    height: 40vh;
+    width: 100vw;
+    background-attachment: fixed;
+    margin: 40px 0px 40px -40px;
+    background-position: center;
+    background-size: cover;
+}
+
+.cocktail-section,
+.search-section {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.cocktail-section .section-title {
+    border: 2px solid #393646;
+    padding: 10px;
+}
+
+.search-bar {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #191825;
+    text-align: center;
+}
+
+.cocktail-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.cocktail-item {
+    padding: 20px;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #333333;
+    box-sizing: border-box;
+}
+
+.cocktail-item:hover {
+    background-color: #191825;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+
+.cocktail-item:hover h3 {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.cocktail-item:hover p {
+    color: white;
+}
+
+.cocktail-item:hover img {
+    border: 2px solid white;
+}
+
+.cocktail-item img,
+.cocktail-recipe img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #333333;
+}
+
+.cocktail-item h2 {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    color: #333333;
+}
+
+.cocktail-item p {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.cocktail-recipe {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.cocktail-recipe h1 {
+    grid-column: 1 / span 2;
+    text-align: right;
+}
+
+.cocktail-recipe img {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 2;
+}
+
+.cocktail-recipe h2:nth-of-type(1) {
+    margin: 0.5rem;
+    grid-row: 4;
+    grid-column: 1 / span 2;
+}
+
+.cocktail-recipe p:nth-of-type(1) {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+}
+
+.cocktail-recipe h2:nth-of-type(2) {
+    margin: 0.5rem;
+    grid-row: 6;
+    grid-column: 1 / span 2;
+}
+
+.cocktail-recipe ul {
+    grid-row: 7;
+    grid-column: 1 / span 2;
+}
+
+input[type="text"] {
+    border: 1px solid white;
+    height: 46px;
+    min-width: 70%;
+    background-color: #191825;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+button {
+    height: 46px;
+    width: 28%;
+    border: 0;
+}
+
+button:hover {
+    background-color: #554f63;
+}
+
+button:active {
+    background-color: #332f3d;
+}
+
+/* monthly cocktail */
+.monthly-cocktail {
+    max-width: 980px;
+    background-color: #f5f5f5;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    border: 2px solid #191825;
+    flex-wrap: wrap;
+
+}
+
+.monthly-cocktail-info {
+    position: relative;
+    width: 100%;
+}
+
+.monthly-cocktail-card {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.monthly-cocktail-card .card-front,
+.monthly-cocktail-card .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: transform 0.9s;
+}
+
+.monthly-cocktail-card .card-front {
+    background-image: url('../assets/aperol.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.monthly-cocktail-card .card-back {
+    transform: rotateY(180deg);
+}
+
+.monthly-cocktail-card:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.monthly-cocktail-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.monthly-cocktail-card .card-back {
+    background-color: #191825;
+    border: 2px solid white;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.monthly-cocktail-card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.monthly-cocktail-card p {
+    margin-bottom: 0;
+}
+
+.monthly-cocktail-card .card-back p {
+    color: white;
+}
+
+.monthly-cocktail-card .card-back .cocktail-ingredients {
+    margin-bottom: 1rem;
+}
+
+.monthly-cocktail-card .card-back .cocktail-instructions {
+    flex-grow: 1;
+}
+
+.monthly-cocktail-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.ingredients-column ul,
+.instructions-column ol {
+    line-height: 1.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .cocktail-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cocktail-item {
+        padding: 10px;
+    }
+
+    .cocktail-item img {
+        height: 150px;
+    }
+
+    .cocktail-item h2 {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .cocktail-item {
+        padding: 20px;
+    }
+
+    .cocktail-item img {
+        height: 200px;
+    }
+
+    .cocktail-item h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    h2 {
+        margin: 8rem 0 4rem;
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .cocktail-recipe h2:nth-of-type(1) {
+        grid-row: 2;
+        grid-column: 1;
+        margin: 0;
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .cocktail-recipe img {
+        grid-row: 2 / span 4;
+        grid-column: 2;
+    }
+
+    .cocktail-recipe p:nth-of-type(1) {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .cocktail-recipe h2:nth-of-type(2) {
+        grid-row: 4;
+        grid-column: 1;
+        margin: 0;
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .cocktail-recipe ul {
+        grid-row: 5;
+        grid-column: 1;
+    }
+
+    .monthly-cocktail {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .monthly-cocktail-info {
+        width: 50%;
+    }
+
+    .monthly-cocktail-card {
+        width: 40%;
+    }
+
+    .card-title {
+        margin-top: 3rem;
+    }
+}

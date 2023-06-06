@@ -48,7 +48,7 @@ p {
 }
 
 .image-container {
-    background-image: url(/img/bar.5d1370b0.jpg);
+    background-image: url('../assets/bar.jpg');
     height: 40vh;
     width: 100vw;
     background-attachment: fixed;

@@ -20,7 +20,7 @@ Cocktail App is a web application that allows users to explore a wide variety of
 
 ## Getting Started
 
-To get started with the Cocktail Finder application, follow these steps:
+To get started with the Cocktails Application, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/elena-g-popa/cocktails-app.git`
 2. Install the dependencies: `npm install`
@@ -29,14 +29,14 @@ To get started with the Cocktail Finder application, follow these steps:
 
 ## Testing
 
-The codebase of Cocktail Finder has been thoroughly tested using the Jest testing framework. Unit tests have been written to ensure the functionality and reliability of the application.
+The codebase of Cocktails App has been thoroughly tested using the Jest testing framework. Unit tests have been written to ensure the functionality and reliability of the application.
 
 To run the tests, use the following command: `npm run test:unit`
 
 ## Contribution
 
-Contributions to the Cocktail Finder project are welcome! If you find a bug or want to add a new feature, please submit an issue or create a pull request.
+Contributions to the Cocktails App project are welcome! If you find a bug or want to add a new feature, please submit an issue or create a pull request.
 
 ---
 
-Enjoy exploring and discovering new cocktail recipes with Cocktail Finder! Cheers!
+Enjoy exploring and discovering new cocktail recipes with Cocktails App! Cheers!
